@@ -6,8 +6,10 @@ public class UIManager : MonoBehaviour
 {
     public LeanTweenType easeType;
     public float duration;
-    public float inPos;
-    public float outPos;
+    public float inPosX;
+    public float outPosX;
+    public float inPosY;
+    public float outPosY;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,13 @@ public class UIManager : MonoBehaviour
 
     public void MoveIn()
     {
-        LeanTween.moveX(gameObject, inPos, duration).setEase(easeType);
+        LeanTween.moveX(gameObject, inPosX, duration).setEase(easeType);
+        LeanTween.moveY(gameObject, inPosY, duration).setEase(easeType);
     }
 
     public void MoveOut()
     {
-        LeanTween.moveX(gameObject, outPos, duration).setEase(easeType);
+        LeanTween.moveX(gameObject, outPosX, duration).setEase(easeType);
+        LeanTween.moveY(gameObject, outPosY, duration).setEase(easeType);
     }
 }
